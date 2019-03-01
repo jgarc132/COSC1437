@@ -1,0 +1,8 @@
+Total time: 15
+Capacity of Waiting Queue: -1
+Proccesed: 0
+Players played0
+Players that stayed; -18
+Average play time: 0
+Number of players enqueued: 0
+Number of players deqeueud: 0

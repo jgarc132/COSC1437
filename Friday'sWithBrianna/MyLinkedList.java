@@ -1,0 +1,71 @@
+public class MyLinkedList{
+  private class Node{
+    Player value;
+    Node next;
+    
+  public Node(Player value){
+    this(value,null);
+  }
+  public Node(Player value, Node next){
+    this.value = value;
+    this.next = next;
+   }
+  }
+  //MyLinkedList Fields
+  Node first;
+  Node last;
+  
+  public MyLinkedList(){
+    this.first  = null;
+    this.last = null;
+  }
+  
+  public boolean isEmpty(){
+    return first == null;
+  }
+  
+  public void add(Player value){
+    if(isEmpty()){
+      first = new Node(value);
+      last = first;
+    }else{
+      last.next = new Node(value);
+      last = last.next;
+    }
+  }
+  public void addToFront(Player value){
+    if(isEmpty()){
+      first = new Node(value);
+      last = first;
+    }else{
+      first = new Node(value,first);
+    } 
+  }
+  public void print(){
+    Node dummy = first;
+    while(dummy != null){
+      System.out.println(dummy.value);
+      dummy = dummy.next;
+    }
+  }
+  public int size(){
+    Node dummy = first;
+    int size = 0;
+    while(dummy != null){
+      size++;
+      dummy = dummy.next;
+    }
+    return size;
+  }
+  public static void main(String[] args){
+    MyLinkedList list = new MyLinkedList();
+    for(int i = 0; i <= 10;i++){
+      list.add(i);
+    }
+    System.out.println(list.isEmpty());
+    list.add(11);
+    list.addToFront(-1);
+    list.print();
+    System.out.println("Size: " + list.size());
+  }
+}

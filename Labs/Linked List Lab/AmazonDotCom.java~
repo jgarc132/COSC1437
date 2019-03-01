@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+public class AmazonDotCom{
+  private Order shoppingCart;
+  Order first;
+  Order last;
+  public AmazonDotCom(){
+    this.first = null;
+    this.last = null;
+  }
+  public boolean isEmpty(){
+    if(shoppingCart.getProductName() == null && shoppingCart.getPrice() == 0.0 && shoppingCart.getQuantity() == 0)
+      return true;
+    else
+      return false;
+  }
+  public void add(Order value){
+    
+    if(isEmpty()){
+      first = new Order(value.getProductName(),value.getPrice(),value.getQuantity());
+      last = first;
+    }else{
+      last.next = new Order(value.getProductName(),value.getPrice(),value.getQuantity());
+      last = last.next;
+    }
+  }
+  public static void main(String[] args)throws IOException{
+   Scanner file = new Scanner(new File("orders.txt"));
+   Order order1 = new Order(file.nextLine());
+   System.out.println(order1);
+   AmazonDotCom shoppingCart = new AmazonDotCom();
+   shoppingCart.add(order1);
+   file.close();
+  }
+}

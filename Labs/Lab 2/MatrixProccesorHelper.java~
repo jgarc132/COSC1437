@@ -1,0 +1,9 @@
+public class MatrixProccesorHelper{
+  public static void main(String[] args){
+    int [] smallRows = {2,4,6,8};
+    int [] smallCol = {8,6,4,2};
+    int product = 0;
+    
+    for()
+  }
+}

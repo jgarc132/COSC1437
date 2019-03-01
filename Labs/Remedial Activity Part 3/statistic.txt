@@ -1,0 +1,7 @@
+Contacts: BennyStonebraker , RL32nd , JoyaLen4 , LoKoth654 , MaPerr11 , FranNapoles , DMarquez , CammieShake , EugHeer78 , Cindeey , CS1SC , DaisyLouie99 , BrunaGottfried , MaRull2000 , BeFu1998 , Evonnde , BLless , Melby , ttup9 , NK224 , G135ao , BrCee , 
+Average number of sent messages is: 259
+Average number of received messeges is: 234.0
+Individual with the most message sent is: CS1SC
+Individual with the most message received is: Cindeey
+Individual with the least message sent was: FranNapoles
+Individual with the least message received was: FranNapoles

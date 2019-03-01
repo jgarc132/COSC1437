@@ -1,0 +1,81 @@
+public class MyLinkedList{
+  private class Node{
+    String name;
+    double price;
+    int quantity;
+    Node next;
+    
+  public Node(String name,double price, int quantity){
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+    this.next = null;
+  }
+  public Node(String name){
+   for(int i = 0;i <= 2;i++){
+      String token[] = line.split("\t");
+      this.productName = token[0];
+      this.price = Double.parseDouble(token[1]);
+      this.quantity = Integer.parseInt(token[2]);
+    }
+    this.next = null;
+   }
+  }
+  //MyLinkedList Fields
+  Node first;
+  Node last;
+  
+  public MyLinkedList(){
+    this.first  = null;
+    this.last = null;
+  }
+  
+  public boolean isEmpty(){
+    return first == null;
+  }
+  
+  public void add(Node e){
+    if(isEmpty()){
+      first = new Node(e);
+      last = first;
+    }else{
+      last.next = new Node(e);
+      last = last.next;
+    }
+  }
+  public void addToFront(int value){
+    if(isEmpty()){
+      first = new Node(value);
+      last = first;
+    }else{
+      first = new Node(value,first);
+    } 
+  }
+  public void print(){
+    Node dummy = first;
+    while(dummy != null){
+      System.out.println(dummy.value);
+      dummy = dummy.next;
+    }
+  }
+  public int size(){
+    Node dummy = first;
+    int size = 0;
+    while(dummy != null){
+      size++;
+      dummy = dummy.next;
+    }
+    return size;
+  }
+  public static void main(String[] args){
+    MyLinkedList list = new MyLinkedList();
+    for(int i = 0; i <= 10;i++){
+      list.add(i);
+    }
+    System.out.println(list.isEmpty());
+    list.add(11);
+    list.addToFront(-1);
+    list.print();
+    System.out.println("Size: " + list.size());
+  }
+}

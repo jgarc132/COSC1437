@@ -1,0 +1,5 @@
+public class EmptyQueueException extends Exception{
+  public String EmptyQueueException(String s){
+    return super.s;
+  }
+}

@@ -1,0 +1,11 @@
+public class example{
+  public static void main(String[] args){
+    trangle(3);
+  }
+  public static void triagle(int n){
+    if(n == 0)
+      return;
+    else
+      System.out.println("*" + triangle(n-1));
+  }
+}

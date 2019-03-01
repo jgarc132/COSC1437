@@ -1,0 +1,8 @@
+public class BST{
+  BNode root;
+  
+  public BST(){
+    root = null;
+  }
+  
+}

@@ -1,0 +1,58 @@
+public class MyHeap{
+  public static void main(String[] args){
+    int[] heap = {3,31,100,71,52,122,101};//true
+    int[] heap1 = {2,6,4,10,9,1,3};//false
+    int[] heap2 = {2,6,4,10,9,7,5};//true
+    System.out.println(findTheSecondSmallest(heap2));
+    System.out.println(checkMinHeap(heap));
+    System.out.println(checkMinHeap(heap1));
+    System.out.println(findTheKthSmallest(heap,2));
+    
+  }
+  public static int findTheSecondSmallest(int[] heap){
+    int i = 0;
+    int left = (2*i) +1;
+    int right = (2*i) + 2;
+    return heap[left] < heap[right] ? heap[left] : heap[right];
+  }
+  public static int findTheKthSmallest(int[] heap, int k){
+    int l = 9999999;
+    int[] order = new int[heap.length];
+    for(int i =0; i < heap.length;i++){
+      if(l > heap[i]){
+        order[i] = heap[i];
+        l = heap[i];
+      }
+    }
+    return order[k+1];
+  }
+  public static boolean checkMinHeap(int[] heap){
+    for(int i = 0; i < ((heap.length-1)/2);i++){
+      if(heap[i] > heap[(2*i) + 1] || ((2*1 + 2) != heap.length) && heap[i] > heap[(2*i)+2]){
+        return false;
+      }
+    }
+    return true;
+  }
+  public void perculateDown(int i,int[] heap){
+    int child;
+    int temp = heap[i];
+    int heapsize  = heap.length;
+    while((2*i + 1) < heapsize){
+        int leftChild = (2*i) + 1;
+        int rightChild = (2*i) + 2;
+
+        // This is for a max heap. change operator for min heap
+        // if left is larger than right child gets left position not value
+        child = heap[leftChild] > heap[rightChild] ? leftChild : rightChild;
+
+        if(temp < heap[child])
+            heap[i] = heap[child];
+        else
+            break;
+        i = child;
+    }
+    heap[i] = temp;
+
+  }
+}
