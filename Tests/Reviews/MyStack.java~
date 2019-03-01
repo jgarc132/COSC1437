@@ -1,0 +1,8 @@
+public class MyStack{
+  String[] stack;
+  int top;
+  public MyStack(int capacity){
+    stack = new String[capacity];
+    top = 0;
+  }
+}

@@ -1,0 +1,57 @@
+public class BinarySearchTree{
+  private class BNode{
+    int value;
+    BNode leftChild;
+    BNode rightChild;
+    public BNode(int value){
+      this(value,null,null);
+    }
+    public BNode(int value, BNode leftChild, BNode rightChild){
+      this.value = value;
+      this.leftChild = leftChild;
+      this.rightChild = rightChild;
+    }
+  }
+  BNode root;
+  int size;
+  
+  public boolean isEmpty(){
+    return root == null;
+  }
+  
+  public boolean find(int x,BNode temp){
+    if(isEmpty())
+      return false;
+    if(x == temp.value)
+      return true;
+    if(x < temp.value)
+      return find(x,temp.leftChild);
+    else
+      return find(x,temp.rightChild);
+  }
+  public void add(int x){
+    add(x,root.value);
+  }
+  private void add(int x, BNode temp){
+  if(isEmpty()){
+      root.value = x;
+      size++
+    }
+  if(x > root.value && root.rightChild == null){
+      root.rightChild.value = x;
+      size++;
+  }else{
+      add(x,root.rightChild);
+      size++;
+  }
+  if(x < root.value && root.leftChild == null){
+      root.leftChild.value = x;
+      size++;
+  }else{
+    add(x,root.leftChild);
+    size++;
+  }
+ }
+}
+
+

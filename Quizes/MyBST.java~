@@ -1,0 +1,21 @@
+public class MyBST{
+  protected Node BNode;
+  public boolean isEmpty(){
+    return BNode == null;
+  }
+  class BST()extends MyBST{
+    public boolean find(int x){
+      return find(x,BNode);
+    }
+    private boolean find(int x, Node bsTree){
+      if(bsTree == null)
+        return false;
+      if(x == bsTree.value)
+        return true;
+      if(x < bsTree.value)
+        return find(x,bsTree.left);
+      else
+        return find(x,bsTree.right);
+    }
+  }
+}

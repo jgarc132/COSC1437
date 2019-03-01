@@ -1,0 +1,14 @@
+import java.lang.*:
+public class Quiz4{
+  public static void main(String[] args){
+    int random = (int)(Math.Random()*11);
+    int[] array = {-1,-1,-1,-1,-1,-1,-1}
+  }
+  public static void populateRandom(int[] a,int start,int end,int random){
+    if(start > end)
+      return start;
+    else if(start < end)
+      a[start] = random
+      return populateRandom(a,start+1,end)
+  }
+}

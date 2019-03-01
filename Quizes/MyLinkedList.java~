@@ -1,0 +1,92 @@
+public class MyLinkedList{
+  private class Node{
+    int value;
+    Node next;
+    public Node(int value){
+      this(value,null);
+    }
+    public Node(int value,Node next){
+      this.value = value;
+      this.next = next;
+    }
+  }
+  Node first;
+  Node last;
+  public boolean isEmpty(){
+    return first == null;
+  }
+  public void add(int value){
+    if(isEmpty()){
+      first = new Node(value);
+      last = first;
+    }else{
+      last.next = new Node(value);
+      last = last.next;
+    }
+  }
+  public void print(){
+    Node dummy = first;
+    while(dummy != null){
+      System.out.println(dummy.value);
+      dummy = dummy.next;
+    }
+  }
+  public int size(){
+    Node dummy = first;
+    int size = 0;
+    while(dummy != null){
+      size++;
+      dummy = dummy.next;
+    }
+    return size;
+  }
+  public int getNumberOfOccurrences(int target){
+    int occurrences = 0;
+    Node dummy = first;
+    while(dummy != null){
+      if(target == dummy.value){
+        occurrences++;
+        dummy = dummy.next;
+      }else{
+        dummy = dummy.next;
+      } 
+    }
+    return occurrences;
+  }
+  
+  public void addToMiddle(int target){
+    int middle = (size()/2);
+    add(target);
+//    int count = 0;
+//    Node dummy = first;
+//    while(dummy != null){
+//      if(count == middle){
+//        dummy = new Node(target,dummy);
+//        dummy.next = dummy;
+//        dummy = dummy.next;
+//      }else{
+//        count++;
+//        dummy = dummy.next;
+//      }
+//    }
+  }
+  public MyLinkedList createAndReverse(MyLinkedList list){
+    MyLinkedList LinkedList1 = new MyLinkedList();
+    
+    
+    
+    return LinkedList1;
+  }
+  public static void main(String[] args){
+    MyLinkedList list = new MyLinkedList();
+    for(int i = 0; i <= 10;i++){
+      list.add(i);
+      //list.add(5);
+    }
+    //System.out.println("Occurences: " + list.getNumberOfOccurrences(5));
+    //list.print();
+    list.addToMiddle(100);
+    list.print();
+    
+  }
+}

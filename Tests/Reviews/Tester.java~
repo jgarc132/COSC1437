@@ -1,0 +1,8 @@
+import java.util.*;
+public class Tester{
+  public static void(String[] args){
+    Scanner uI = new Scanner(System.in);
+    System.out.println("Please Enter the size of your Stack");
+    MyStack userStack = new Stack(uI.nextInt());
+  }
+}
